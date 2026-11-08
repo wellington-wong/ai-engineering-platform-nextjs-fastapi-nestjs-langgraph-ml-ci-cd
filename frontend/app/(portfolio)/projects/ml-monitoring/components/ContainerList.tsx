@@ -84,7 +84,6 @@ export default function ContainerList({
                             <th className="pb-3">Memory</th>
                             <th className="pb-3">Net I/O</th>
                             <th className="pb-3">Block I/O</th>
-                            <th className="pb-3">PIDS</th>
                             <th className="pb-3">Status</th>
                         </tr>
                         </thead>
@@ -149,14 +148,10 @@ export default function ContainerList({
                                         : '—'}
                                 </td>
 
-                                <td className="py-4">
-                                    {container.metrics
-                                        ? `${container.metrics.pids.current} / ${container.metrics.pids.limit}`
-                                        : '—'}
-                                </td>
 
                                 <td className="py-4 text-gray-500">
                                     {container.status}
+
                                 </td>
 
                             </tr>

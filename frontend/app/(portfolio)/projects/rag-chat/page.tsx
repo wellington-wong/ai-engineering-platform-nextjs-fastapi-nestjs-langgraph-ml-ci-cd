@@ -82,7 +82,7 @@ export default function RagChat() {
     // ngOnInit
     useEffect(() => {
         // Doc panel open by default on desktop, closed on mobile
-        if (!window.matchMedia("(max-width: 767px)").matches) setShowDocPanel(true);
+        if (!window.matchMedia("(max-width: 767px)").matches) setShowDocPanel(false);
 
         api<ChatSession[]>("/sessions")
             .then((s) => {
@@ -352,8 +352,8 @@ export default function RagChat() {
 
                 {/* Documents panel */}
                 {showDocPanel && (
-                    <aside className="fixed inset-y-0 right-0 z-20 flex w-72 flex-col border-l bg-white md:static">
-                        <div className="flex items-center justify-between border-b p-3">
+                    <aside className="fixed inset-y-0 right-0 z-20 flex w-72 flex-col border-l border-gray-200 bg-white md:static">
+                        <div className="flex items-center justify-between border-b border-gray-200 p-3">
                             <p className="text-sm font-semibold">Documents</p>
                             <div className="flex items-center gap-3">
                                 <button
