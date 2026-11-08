@@ -47,7 +47,7 @@ services:
       build: ./backend/ml-service
       restart: unless-stopped
       expose:
-        - "8000"
+        - "8009"
 
     db:
       image: postgres:16

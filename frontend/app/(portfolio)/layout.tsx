@@ -107,7 +107,7 @@ export default function AppsLayout({
         </div>
       </div>
       <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-[#F5F2ED]/95 backdrop-blur-sm">
-        <nav aria-label="Contact and social links" className="mx-auto flex max-w-7xl items-center justify-end gap-2 px-3 py-2 sm:gap-5 sm:px-6">
+        <nav aria-label="Contact and social links" className="mx-auto flex max-w-7xl items-center justify-end gap-2 px-3 py-1 sm:gap-5 sm:px-6">
           <a href="https://www.linkedin.com/in/wellingtonwong/" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn" className="inline-flex items-center gap-2 rounded-md px-2 py-2 text-sm text-gray-700 transition-colors hover:bg-white hover:text-gray-950">
             <img src="/images/svg/linkedin.svg" title="" className="h-5 w-5 opacity-25 hover:opacity-100" />
           </a>
