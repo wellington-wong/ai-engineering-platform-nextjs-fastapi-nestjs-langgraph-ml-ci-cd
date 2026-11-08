@@ -57,7 +57,7 @@ jobs:
 
             chmod 600 .env
 
-            docker compose -f docker-compose.prod.yml up -d --build notes agent
+            docker compose -f docker-compose.prod.yml up -d --build notes agent ml-service
             docker system prune -af
             sleep 5
 
