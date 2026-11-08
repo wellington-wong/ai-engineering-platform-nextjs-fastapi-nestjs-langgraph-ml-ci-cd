@@ -43,10 +43,17 @@ services:
           condition: service_healthy
 
 
+    ml-service:
+      build: ./backend/ml-service
+      restart: unless-stopped
+      expose:
+        - "8000"
+
     db:
       image: postgres:16
-      restart: unless-stopped
-        
+      
+      restart: unless-stopped  
+
       environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

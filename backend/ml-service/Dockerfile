@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.15-slim
 
 # Copy uv into the image
 
@@ -18,8 +18,9 @@ COPY pyproject.toml uv.lock README.md ./
 RUN uv sync --locked --no-dev --no-install-project
 
 # Copy application and trained model
-COPY src/ ./src/
+COPY app/ ./app/
 COPY models/ ./models/
+
 
 # Install the project itself
 RUN uv sync --locked --no-dev
@@ -29,4 +30,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8000
 
-CMD ["uvicorn", "ml_service.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

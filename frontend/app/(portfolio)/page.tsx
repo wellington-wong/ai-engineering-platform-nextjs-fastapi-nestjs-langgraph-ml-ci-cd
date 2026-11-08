@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { ArrowRight, Mail } from 'lucide-react';
 import type { Metadata } from 'next';
 
+
+import Modal from '../../components/Modal';
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-7xl p-6 lg:p-8">
@@ -26,7 +28,10 @@ export default function HomePage() {
           Expertise <ArrowRight className="h-5 w-5" aria-hidden="true" />
         </Link>
       </div>
-
+        <Modal
+            title="Confirm Action"
+            description="Are you sure you want to proceed with this update?"
+        />
       <section id="contact" className="scroll-mt-8 border-t border-gray-200 py-10 mt-10">
         <h2 className="text-xl font-semibold text-gray-950">Get in touch</h2>
         <p className="mt-2 text-gray-600">Have a project in mind? I’d be happy to hear from you.</p>
