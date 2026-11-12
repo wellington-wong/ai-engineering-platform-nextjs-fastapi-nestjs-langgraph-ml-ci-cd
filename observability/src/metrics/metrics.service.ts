@@ -18,23 +18,31 @@ export class MetricsService {
   getSystemMetrics(minutes = 60) {
     const since = new Date(Date.now() - minutes * 60 * 1000);
 
-    return this.prisma.systemMetric.findMany({
-      where: {
-        timestamp: {
-
-          gte: since,
+    return this.prisma.systemMetric
+      .findMany({
+        where: {
+          timestamp: {
+            gte: since,
+          },
         },
-      },
-      include: {
-        systemAnomaly: true,
-      },
-      orderBy: {
-        timestamp: 'asc',
-      },
+        include: {
+          systemAnomaly: true,
+        },
+        orderBy: {
+          timestamp: 'asc',
+        },
 
-    });
+        }).map((metric) => ({
+        ...metric,
+        systemAnomaly: metric.systemAnomaly
+          ? {
+              ...metric.systemAnomaly,
+              id: metric.systemAnomaly.id.toString(),
+            }
+          : null,
+      }));
+
   }
-
 
 
   getContainerMetrics(containerId: string, minutes = 60) {
