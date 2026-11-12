@@ -21,13 +21,17 @@ export class MetricsService {
     return this.prisma.systemMetric.findMany({
       where: {
         timestamp: {
-          gte: since,
 
+          gte: since,
         },
+      },
+      include: {
+        systemAnomaly: true,
       },
       orderBy: {
         timestamp: 'asc',
       },
+
     });
   }
 

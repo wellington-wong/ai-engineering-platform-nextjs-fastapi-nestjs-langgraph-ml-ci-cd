@@ -61,7 +61,7 @@ volumes:
 networks:
   default:
 
-  shared-backend:
 
+  shared-backend:
     external: true
     name: shared-backend
