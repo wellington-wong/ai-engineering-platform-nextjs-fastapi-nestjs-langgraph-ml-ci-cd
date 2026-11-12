@@ -75,10 +75,19 @@ export default function SystemMetricsChart({
                         />
 
                         <Tooltip
-                            formatter={(value) =>
-                                `${Number(value).toFixed(1)}%`
-                            }
+                            formatter={(value, name) => {
+                                if (name === 'ML Anomaly') {
+                                    return [
+                                        value === "true" ? 'True' : value === "false" ? 'False' : 'Not evaluated',
+                                        'ML Anomaly',
+                                    ];
 
+                                }
+                                return [
+                                    `${Number(value).toFixed(1)}%`,
+                                    name,
+                                ];
+                            }}
                         />
 
                         <Line
