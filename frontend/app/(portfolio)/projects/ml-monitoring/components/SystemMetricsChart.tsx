@@ -42,7 +42,7 @@ export default function SystemMetricsChart({
 
         ...metric,
         time: new Date(metric.timestamp).toLocaleTimeString(),
-        isAnomaly: metric?.systemAnomaly.isAnomaly,
+        isAnomaly: metric?.systemAnomaly?.isAnomaly,
     }));
 
     return (
@@ -111,8 +111,11 @@ export default function SystemMetricsChart({
                             type="monotone"
 
                             dataKey="isAnomaly"
+
                             name="ML Anomaly"
-                            dot={false}
+                            dot={true}
+                            yAxisId="anomaly"
+                            type="stepAfter"
                         />
 
                     </LineChart>
