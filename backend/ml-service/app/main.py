@@ -11,6 +11,7 @@ app = FastAPI(
 app.include_router(
     anomaly_router,
     prefix="/api/v1/anomaly",
+
     tags=["Anomaly Detection"]
 )
 
