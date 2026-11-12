@@ -6,9 +6,11 @@ import { SystemMetricsService } from '../system/system-metrics.service.js';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { HealthService } from '../health/health.service.js';
 import { MonitorsService } from '../monitors/monitors.service.js';
+import { AnomalyService } from '../anomaly/anomaly.service.js';
 @Injectable()
 export class CollectorService {
   private readonly logger = new Logger(CollectorService.name);
+
 
   constructor(
     private readonly dockerService: DockerService,
@@ -17,13 +19,14 @@ export class CollectorService {
     private readonly prisma: PrismaService,
     private readonly healthService: HealthService,
     private readonly monitorsService: MonitorsService,
+    private readonly anomalyService: AnomalyService,
   ) {}
 
   @Cron('*/10 * * * * *')
   async collect() {
 
     const systemMetrics = await this.systemMetricsService.getMetrics();
-    await this.prisma.systemMetric.create({
+    const savedMetric = await this.prisma.systemMetric.create({
       data: {
 
         cpuUsagePercent: systemMetrics.cpu.usagePercent ?? 0,
@@ -93,5 +96,19 @@ export class CollectorService {
         containers: containerMetrics,
       }),
     );
+
+    const prediction = await this.anomalyService.predict(savedMetric.id, {
+      system: {
+        cpuUsagePercent: systemMetrics.cpu.usagePercent ?? 0,
+        memoryUsagePercent: systemMetrics.memory.usagePercent,
+
+        diskUsagePercent: systemMetrics.disk.usagePercent,
+      },
+    });
+
+    if (prediction) {
+      this.logger.log(`Anomaly prediction: ${JSON.stringify(prediction)}`);
+    }
+
   }
 }

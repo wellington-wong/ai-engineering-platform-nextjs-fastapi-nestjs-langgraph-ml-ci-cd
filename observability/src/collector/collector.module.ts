@@ -8,10 +8,12 @@ import { SystemModule } from '../system/system.module.js';
 import { HealthModule } from '../health/health.module.js';
 
 import { MonitorsModule } from '../monitors/monitors.module.js';
+import { AnomalyModule } from '../anomaly/anomaly.module.js';
 
 @Module({
+
   imports: [SystemModule, DockerModule, HealthModule,
-  MonitorsModule],
+  MonitorsModule, AnomalyModule],
   providers: [CollectorService],
 })
 export class CollectorModule {}

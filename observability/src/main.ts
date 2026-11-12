@@ -20,7 +20,7 @@ async function bootstrap() {
     origin: ['http://localhost:3001', 'https://www.wellington.codes'],
   });
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3002);
 
 }
 await bootstrap();

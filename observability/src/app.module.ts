@@ -15,6 +15,7 @@ import { SystemModule } from './system/system.module.js';
 import { DockerModule } from './docker/docker.module.js';
 import { ScheduleModule } from '@nestjs/schedule';
 import { CollectorModule } from './collector/collector.module.js';
+import { AnomalyModule } from './anomaly/anomaly.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 @Module({
@@ -41,6 +42,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     SystemModule,
     DockerModule,
     CollectorModule,
+    AnomalyModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -33,6 +33,7 @@ services:
       JWT_REFRESH_SECRET: 1655fd1f10c9f6f0b5e81c9c0185ef69c7cbf50f889b016992a959049780b8a7
 
 
+      ML_SERVICE_URL: http://ml-service:8000
     ports:
 
       - "3000:3000"
@@ -47,10 +48,20 @@ services:
       - /sys:/host/sys:ro
       - /:/host/root:ro
 
-
+    networks:
+      - default
+      - shared-backend
 
 
 
 
 volumes:
   observability-postgres:
+
+networks:
+  default:
+
+  shared-backend:
+
+    external: true
+    name: shared-backend

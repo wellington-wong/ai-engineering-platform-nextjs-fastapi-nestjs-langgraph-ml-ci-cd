@@ -81,8 +81,8 @@ model SystemAnomaly {
   isAnomaly      Boolean
   anomalyScore   Float
   modelVersion   String   @db.VarChar(32)
-  evaluatedAt    DateTime @default(now()) @db.Timestamp(3)
 
+  evaluatedAt    DateTime @default(now()) @db.Timestamp(3)
   systemMetric SystemMetric @relation(fields: [systemMetricId], references: [id], onDelete: Cascade)
   //@@index([evaluatedAt(sort: Desc)], map: "SystemAnomaly_anomalies_idx", where: raw("\"isAnomaly\" = true"))
 
