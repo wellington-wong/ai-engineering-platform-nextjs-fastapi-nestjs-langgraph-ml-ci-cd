@@ -47,7 +47,12 @@ services:
       build: ./backend/ml-service
       restart: unless-stopped
       expose:
-        - "8009"
+        - "8000"
+
+      networks:
+        - default
+
+        - shared-backend
 
     db:
       image: postgres:16
@@ -69,3 +74,12 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  default:
+  shared-backend:
+
+    external: true
+
+
+    name: shared-backend
