@@ -15,10 +15,10 @@ export class MetricsService {
     });
   }
 
-  getSystemMetrics(minutes = 60) {
+  async getSystemMetrics(minutes = 60) {
     const since = new Date(Date.now() - minutes * 60 * 1000);
 
-    const systemMetrics = this.prisma.systemMetric
+    const systemMetrics = await this.prisma.systemMetric
       .findMany({
         where: {
           timestamp: {
@@ -33,7 +33,7 @@ export class MetricsService {
         },
 
         });
-      return systemMetrics .map((metric) => ({
+      return systemMetrics.map((metric) => ({
         ...metric,
         systemAnomaly: metric.systemAnomaly
           ? {
