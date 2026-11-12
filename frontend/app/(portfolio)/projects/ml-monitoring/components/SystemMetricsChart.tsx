@@ -34,14 +34,15 @@ export default function SystemMetricsChart({
 
         ...metric,
         time: new Date(metric.timestamp).toLocaleTimeString(),
+        isAnomaly: metric?.systemAnomaly.isAnomaly,
     }));
 
     return (
         <div className="rounded-xl border p-6">
             <div className="mb-6">
                 <h2 className="text-xl font-semibold">
-                    System Metrics
 
+                    System Metrics
                 </h2>
 
                 <p className="text-sm text-gray-500">
@@ -93,6 +94,16 @@ export default function SystemMetricsChart({
                             type="monotone"
                             dataKey="diskUsagePercent"
                             name="Disk"
+                            dot={false}
+                        />
+
+                        <Line
+
+
+                            type="monotone"
+
+                            dataKey="isAnomaly"
+                            name="ML Anomaly"
                             dot={false}
                         />
 
