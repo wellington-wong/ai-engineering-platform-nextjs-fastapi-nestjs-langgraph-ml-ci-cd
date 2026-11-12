@@ -1,8 +1,8 @@
 
 import os
 from pathlib import Path
-from datetime import datetime, timezone
 
+from datetime import datetime, timezone
 import joblib
 import pandas as pd
 
@@ -11,8 +11,8 @@ from sqlalchemy import create_engine
 from sklearn.ensemble import IsolationForest
 
 
-load_dotenv()
 
+load_dotenv()
 # Database connection
 engine = create_engine(
     os.environ["DATABASE_URL"]
