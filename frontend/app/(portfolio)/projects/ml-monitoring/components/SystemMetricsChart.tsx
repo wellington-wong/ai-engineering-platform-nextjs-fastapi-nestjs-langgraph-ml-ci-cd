@@ -108,9 +108,9 @@ export default function SystemMetricsChart({
                         <Line
 
 
-                            type="monotone"
 
                             dataKey="isAnomaly"
+
 
                             name="ML Anomaly"
                             dot={true}
