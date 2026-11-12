@@ -19,12 +19,20 @@ type SystemMetric = {
     cpuUsagePercent: number;
     memoryUsagePercent: number;
     diskUsagePercent: number;
+    systemAnomaly: systemAnomaly;
 }
 
 
 type SystemMetricsChartProps = {
     data: SystemMetric[];
 }
+
+type systemAnomaly = {
+    isAnomaly: boolean,
+    anomalyScore: number,
+    modelVersion: string,
+}
+
 
 export default function SystemMetricsChart({
                                                data,

@@ -7,12 +7,19 @@ import { useEffect, useState } from 'react';
 import SystemMetricsChart from '@/app/(portfolio)/projects/ml-monitoring/components/SystemMetricsChart';
 import ContainerList from '@/app/(portfolio)/projects/ml-monitoring/components/ContainerList';
 
+type systemAnomaly = {
+    isAnomaly: boolean,
+    anomalyScore: number,
+    modelVersion: string,
+
+}
 type SystemMetric = {
     timestamp: string;
     cpuUsagePercent: number;
     memoryUsagePercent: number;
 
     diskUsagePercent: number;
+    systemAnomaly: systemAnomaly;
 };
 
 type ContainerMetrics = {
