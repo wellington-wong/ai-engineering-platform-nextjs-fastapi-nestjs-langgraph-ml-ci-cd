@@ -3,7 +3,6 @@ import { ArrowRight, Mail } from 'lucide-react';
 import type { Metadata } from 'next';
 
 
-import { Modal } from '../../components/Modal';
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-7xl p-6 lg:p-8">
