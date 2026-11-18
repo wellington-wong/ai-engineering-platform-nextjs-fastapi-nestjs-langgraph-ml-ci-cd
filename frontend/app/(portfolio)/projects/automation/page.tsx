@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 
 
+import { ModalTrigger } from '@/components/modal';
 export const metadata: Metadata = {
     title: 'Automation'
 };
@@ -19,7 +20,11 @@ export default function AutomationPage() {
       </header>
 
       <section className="rounded-xl border border-gray-200 bg-white p-6">
-        <Image src="/images/n8n-workflow-automation.png" width="1697" height="588" alt="Automation Workflow - n8n" />
+          <ModalTrigger size="full" title="Smart Lead Router - n8n" trigger={<Image src="/images/n8n-workflow-automation.png" width="1697" height="588" alt="Automation Workflow - n8n" />}>
+
+
+              <Image src="/images/n8n-workflow-automation.png" width="1697" height="588" alt="Automation Workflow - n8n" />
+          </ModalTrigger>
       </section>
 
         <div className="mt-6">
