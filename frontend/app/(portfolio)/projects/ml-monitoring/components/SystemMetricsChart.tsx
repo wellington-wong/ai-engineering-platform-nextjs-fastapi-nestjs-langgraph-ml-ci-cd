@@ -41,8 +41,12 @@ export default function SystemMetricsChart({
 
 
         ...metric,
-        time: new Date(metric.timestamp).toLocaleTimeString(),
-        isAnomaly: metric?.systemAnomaly?.isAnomaly,
+
+
+
+
+        time: new Data(metric.timestamp).toLocaleTimeString(),
+        isAnomaly: metric.systemAnomaly?.isAnomaly ?? null,
     }));
 
     return (
@@ -78,7 +82,7 @@ export default function SystemMetricsChart({
                             formatter={(value, name) => {
                                 if (name === 'ML Anomaly') {
                                     return [
-                                        value === "true" ? 'True' : value === "false" ? 'False' : 'Not evaluated',
+                                        typeof value === 'boolean' ? value ? 'True' : 'False' : 'Not evaluated',
                                         'ML Anomaly',
                                     ];
 
