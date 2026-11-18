@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { AppWindow, ArrowUpRight, BriefcaseBusiness, ChevronRight, CodeXml, House, Mail, Menu, Smartphone, Video } from 'lucide-react';
+import { AppWindow, ArrowUpRight, BriefcaseBusiness, CirclePlayIcon, ChevronRight, CodeXml, House, Mail, Menu, Smartphone } from 'lucide-react';
 import { Header } from '../(dashboard)/layout';
 import Clarity from '@microsoft/clarity';
 
@@ -37,7 +37,7 @@ export default function AppsLayout({
     { href: 'https://referrals.wellington.codes', icon: ChevronRight, label: 'Laravel', target: '_blank', nested: true },
     { href: 'https://saas.wellington.codes', icon: ChevronRight, label: 'Nuxt + .NET', target: '_blank', nested: true },
     { href: '/web-mobile', icon: Smartphone, label: 'Web & Mobile' },
-    { href: '/video-gallery', icon: Video, label: 'Video Gallery' },
+    { href: '/video-gallery', icon: CirclePlayIcon, label: 'Video Gallery' },
     { href: '/contact-me', icon: Mail, label: 'Contact me' },
   ];
 
