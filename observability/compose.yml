@@ -26,7 +26,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://observability:${POSTGRES_PASSWORD}@postgres:5432/observability
+      DATABASE_URL: postgresql://observability:${POSTGRES_PASSWORD}@db.wellington.codes/observability
 
       JWT_SECRET: 25dc913a99a779f819d29d9e2947d71027ddf018190588997a7274593d6b7880
 
