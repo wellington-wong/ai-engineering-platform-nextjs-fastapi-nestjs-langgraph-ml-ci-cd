@@ -45,6 +45,7 @@ export default function SystemMetricsChart({
 
 
 
+
         time: new Date(metric.timestamp).toLocaleTimeString(),
         isAnomaly: metric.systemAnomaly?.isAnomaly ?? null,
     }));
