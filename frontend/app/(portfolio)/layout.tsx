@@ -67,7 +67,7 @@ export default function AppsLayout({
         <div className="flex flex-1 overflow-hidden h-full">
           {/* Sidebar */}
           <aside
-              className={`w-64 bg-[#F5F2ED] lg:bg-[#F5F2ED] border-r border-gray-200 lg:block ${
+              className={`w-64 bg-[#F1F3F5] lg:bg-[#F1F3F5] border-r border-gray-200 lg:block ${
                   isSidebarOpen ? 'block' : 'hidden'
               } lg:relative absolute inset-y-0 left-0 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
                   isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
