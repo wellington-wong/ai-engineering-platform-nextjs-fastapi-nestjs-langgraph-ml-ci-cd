@@ -48,7 +48,7 @@ export default function AppsLayout({
       <Header saasMode={false} /><ClarityInit />
       <div className="flex flex-col min-h-[calc(100dvh-68px)] max-w-7xl mx-auto w-full">
 
-        <div className="lg:hidden flex items-center justify-between  bg-[#F5F2ED] border-b border-gray-200 p-4">
+        <div className="lg:hidden flex items-center justify-between  bg-[#F1F3F5] border-b border-gray-200 p-4">
 
 
 
