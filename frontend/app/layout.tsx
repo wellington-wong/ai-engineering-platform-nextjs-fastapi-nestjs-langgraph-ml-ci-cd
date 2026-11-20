@@ -7,7 +7,7 @@ import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
 
 export const metadata: Metadata = {
-  title: { default: 'Wellington Wong — Full-Stack Engineer | AI & Automation', template: "%s | Wellington.Codes" },
+  title: { default: 'Wellington Wong — Full-Stack Engineer | AI/ML & Automation', template: "%s | Wellington.Codes" },
   description: 'Next.js + Vercel'
 
 
