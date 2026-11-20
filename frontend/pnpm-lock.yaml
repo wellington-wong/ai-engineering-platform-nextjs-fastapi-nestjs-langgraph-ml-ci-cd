@@ -87,8 +87,8 @@ importers:
         specifier: ^4.23.0
         version: 4.23.0(supports-color@10.2.2)
       socket.io-client:
-        specifier: ^4.8.2
-        version: 4.8.2(supports-color@10.2.2)
+        specifier: ^4.8.1
+        version: 4.8.4(supports-color@10.2.2)
       stripe:
         specifier: ^18.1.0
         version: 18.5.0(@types/node@22.20.5)
@@ -3292,7 +3292,7 @@ packages:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
 
-  socket.io-client@4.8.2:
+  socket.io-client@4.8.4:
     resolution: {integrity: sha512-7wjKAvVXYOJsbmUgkWbnhPD4bFpkqrUR0++XOjpGFmqDqsqV1CI93VTraeExLxpjxEqrWgFoSRZu1ihjLWfkAA==}
     engines: {node: '>=10.0.0'}
 
@@ -6722,7 +6722,7 @@ snapshots:
 
   smart-buffer@4.2.0: {}
 
-  socket.io-client@4.8.(supports-color@10.2.2):
+  socket.io-client@4.8.4(supports-color@10.2.2):
     dependencies:
       '@socket.io/component-emitter': 3.1.2
       debug: 4.4.3(supports-color@10.2.2)
