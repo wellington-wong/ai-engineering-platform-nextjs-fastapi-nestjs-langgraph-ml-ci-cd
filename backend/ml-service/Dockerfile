@@ -15,7 +15,7 @@ WORKDIR /app
 # Install dependencies first for better Docker layer caching
 COPY pyproject.toml uv.lock README.md ./
 
-RUN uv sync --locked --no-dev --no-install-project
+RUN uv sync --locked --no-dev --no-install-project --no-cache
 
 # Copy application and trained model
 COPY app/ ./app/
@@ -23,7 +23,7 @@ COPY models/ ./models/
 
 
 # Install the project itself
-RUN uv sync --locked --no-dev
+RUN uv sync --locked --no-dev --no-cache
 
 # Make the virtual environment available
 ENV PATH="/app/.venv/bin:$PATH"
