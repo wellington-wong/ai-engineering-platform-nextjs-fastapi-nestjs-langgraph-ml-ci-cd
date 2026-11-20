@@ -96,7 +96,7 @@ export default function AppsLayout({
                         }
                         className={`shadow-none my-1 w-full justify-start cursor-pointer ${
                           pathname === item.href || pathname.startsWith(`${item.href}/`)
-                          ? 'bg-[#F5F2ED] font-bold text-gray-950'
+                          ? 'bg-[#F1F3F5] font-bold text-gray-950'
                             : ''
                         } ${item.nested ? 'ml-4 w-[calc(100%-1rem)] text-sm' : ''}`}
                         onClick={() => setIsSidebarOpen(false)}
