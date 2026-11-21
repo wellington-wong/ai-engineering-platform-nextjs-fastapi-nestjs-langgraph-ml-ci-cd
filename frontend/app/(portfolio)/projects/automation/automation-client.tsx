@@ -19,7 +19,7 @@ const EMPTY_LEAD: Lead = { name: '', email: '', message: '' };
 const SAMPLES: { label: string; lead: Lead }[] = [
   { label: 'Hot', lead: { name: 'Michael Chen', email: 'wellingtonwong@gmail.com', message: 'We are looking for an enterprise solution with a budget of $50,000. We would like to arrange a demo this week and make a decision within two weeks.' } },
   { label: 'Warm', lead: { name: 'Sarah Johnson', email: 'zmerfs@gmail.com', message: 'We are researching pricing, features and implementation options. We are comparing several providers and expect to make a decision in the coming months.' } },
-  { label: 'Cold', lead: { name: 'David Wilson', email: 'me@wellington.codes.com', message: 'I would like some general information about your services. I am currently exploring available options without any immediate requirements.' } },
+  { label: 'Cold', lead: { name: 'David Wilson', email: 'me@wellington.codes', message: 'I would like some general information about your services. I am currently exploring available options without any immediate requirements.' } },
 ];
 
 export default function AutomationPage() {
