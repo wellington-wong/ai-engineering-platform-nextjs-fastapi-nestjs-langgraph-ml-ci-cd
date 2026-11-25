@@ -1,11 +1,47 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
+
+
 
 const nextConfig: NextConfig = {
-
+  /* config options here */
   experimental: {
-    //ppr: true,
-    //clientSegmentCache: true
+    agentFeedback: true,
+  },
+  cacheComponents: true,
+  partialPrefetching: true,
+  turbopack: {
+
+
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
+      },
+    },
+  },
+
+
+
+
+  allowedDevOrigins: [
+    "*.ngrok-free.app",
+    "*.ngrok-free.dev",
+    "*.ngrok.app",
+  ],
+
+  async redirects() {
+
+
+    return [
+      {
+        source: "/projects/:path+",
+        destination: "/ai-projects/:path+",
+        permanent: true
+      }
+    ]
+
+
   }
 };
 
-export default nextConfig;
+    export default nextConfig;

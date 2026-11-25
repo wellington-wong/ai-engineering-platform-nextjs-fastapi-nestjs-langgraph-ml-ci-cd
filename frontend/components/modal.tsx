@@ -52,10 +52,10 @@ export function ModalTrigger({
                                  trigger,
                                  children,
                                  ...contentProps
-                             }: ModalContentProps & { trigger: React.ReactNode }) {
+                             }: ModalContentProps & { trigger: React.ReactElement }) {
     return (
         <Dialog>
-            <DialogTrigger asChild className={"cursor-pointer"}>{trigger}</DialogTrigger>
+            <DialogTrigger className={"cursor-pointer"} render={trigger} nativeButton={false} />
             <ModalContent {...contentProps}>{children}</ModalContent>
         </Dialog>
     )

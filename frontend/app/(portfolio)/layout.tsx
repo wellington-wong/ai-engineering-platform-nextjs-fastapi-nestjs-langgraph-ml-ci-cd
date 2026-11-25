@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { AppWindow, ArrowUpRight, BriefcaseBusiness, CirclePlayIcon, ChevronRight, CodeXml, House, Mail, Menu, Smartphone } from 'lucide-react';
-import { Header } from '../(dashboard)/layout';
 import Clarity from '@microsoft/clarity';
+import Image from 'next/image';
 
 export default function AppsLayout({
                                           children
@@ -23,20 +23,22 @@ export default function AppsLayout({
     { href: '/', icon: House, label: 'Home' },
 
     { href: '/expertise', icon: CodeXml, label: 'Expertise' },
-    { href: '/projects', icon: BriefcaseBusiness, label: 'AI Projects' },
-    { href: '/projects/ai-agent', icon: ChevronRight, label: 'AI Agent', nested: true },
+    { href: '/ai-projects', icon: BriefcaseBusiness, label: 'AI Projects' },
+    { href: '/ai-projects/ai-agent', icon: ChevronRight, label: 'AI Agent', nested: true },
 
-    { href: '/projects/rag-chat', icon: ChevronRight, label: 'RAG Chat', nested: true },
-    { href: '/projects/automation', icon: ChevronRight, label: 'Automation', nested: true },
-    { href: '/projects/ml-monitoring', icon: ChevronRight, label: 'ML Monitoring', nested: true },
-    { href: '/projects/ai-notes-summarizer', icon: ChevronRight, label: 'AI Notes Summarizer', nested: true },
+    { href: '/ai-projects/rag-chat', icon: ChevronRight, label: 'RAG Chat', nested: true },
+    { href: '/ai-projects/automation', icon: ChevronRight, label: 'Automation', nested: true },
+    { href: '/ai-projects/ml-monitoring', icon: ChevronRight, label: 'ML Monitoring', nested: true },
+    { href: '/ai-projects/ai-notes-summarizer', icon: ChevronRight, label: 'AI Notes Summarizer', nested: true },
 
 
 
-    { href: '/saas-platforms', icon: AppWindow, label: 'SaaS Platforms' },
-    { href: 'https://referrals.wellington.codes', icon: ChevronRight, label: 'Laravel', target: '_blank', nested: true },
+    { href: '/saas-mobile', icon: AppWindow, label: 'SaaS & Mobile' },
+    { href: '/dashboard', icon: ChevronRight, label: 'Next.js + Clerk', target: '_blank', nested: true },
     { href: 'https://saas.wellington.codes', icon: ChevronRight, label: 'Nuxt + .NET', target: '_blank', nested: true },
-    { href: '/web-mobile', icon: Smartphone, label: 'Web & Mobile' },
+    { href: '/', icon: ChevronRight, label: 'Django', target: '_blank', nested: true },
+    { href: 'https://referrals.wellington.codes', icon: ChevronRight, label: 'Laravel', target: '_blank', nested: true },
+    { href: 'https://mobile-app.wellington.codes', icon: ChevronRight, label: 'React Native', target: '_blank', nested: true },
     { href: '/video-gallery', icon: CirclePlayIcon, label: 'Video Gallery' },
     { href: '/contact-me', icon: Mail, label: 'Contact me' },
   ];
@@ -74,9 +76,9 @@ export default function AppsLayout({
               }`}
           >
             <nav className="h-full overflow-y-auto p-4">
-              {navItems.map((item) => (
+              {navItems.map((item, i) => (
                   <Link
-                    key={item.href}
+                    key={i}
                     href={item.href}
 
 
@@ -138,8 +140,28 @@ export default function AppsLayout({
 
 function ClarityInit() {
   useEffect(() => {
-	  Clarity.init("wisod5y80f");
-  }, []);
+    Clarity.init("wisod5y80f");
 
+
+  }, []);
   return null;
+
+}
+export function Header({ saasMode } : {saasMode: boolean}) {
+
+  return (
+      <header className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <Link href="/" className="flex items-center">
+            <Image src="/images/w.codes-logo.png" width="98" height="23" alt="Wellington Codes" />
+          </Link>
+          <div className="flex items-center space-x-4">
+            <Suspense fallback={<div className="h-9" />}>
+              <Image src="/images/dev-photo.png" className="rounded-full scale-200 size-[20px]" width="70" height="70" alt="Wellington Codes" />
+            </Suspense>
+          </div>
+        </div>
+      </header>
+
+  );
 }

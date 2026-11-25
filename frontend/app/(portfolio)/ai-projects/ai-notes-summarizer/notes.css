@@ -1,0 +1,128 @@
+
+
+.container.notes h1,
+
+
+.container.notes h2,
+.container.notes h3,
+.container.notes h5,
+.container.notes h6 {
+}
+
+.container.notes h1 {
+}
+
+.container.notes p {
+}
+
+.container.notes {
+}
+
+.container.notes .note-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.container.notes .note-form label {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.container.notes textarea,
+.container.notes input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    outline: none;
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.container.notes textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.container.notes textarea:focus,
+.container.notes input:focus {
+    border-color: #666;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.container.notes button {
+    padding: 12px 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: white;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            transform 0.08s ease;
+}
+
+.container.notes button:hover {
+    background: #222;
+    color: white;
+}
+
+.container.notes button:active {
+    transform: scale(0.98);
+}
+
+.container.notes button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.container.notes .note {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.container.notes .note h3 {
+    margin-bottom: 10px;
+}
+
+.container.notes .note h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.container.notes .note p {
+    margin-bottom: 0;
+    white-space: pre-wrap;
+}
+
+.container.notes .note button {
+    margin-top: 10px;
+}
+
+.container.notes a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container.notes a:hover {
+    text-decoration: underline;
+}
