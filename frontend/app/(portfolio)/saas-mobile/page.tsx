@@ -7,16 +7,32 @@ export const metadata: Metadata = {
 
 const platforms = [
   {
+    title: 'Next.js SaaS with Clerk Auth',
+    description: 'A SaaS application with authentication powered by Clerk.',
+    stack: 'Next.js + Clerk',
+  },
+  {
+    href: 'https://saas.wellington.codes',
+    title: 'Nuxt + .NET SaaS',
+    description: 'A subscription based SaaS application built with a Nuxt frontend and .NET backend.',
+    stack: 'Nuxt + .NET',
+  },
+  {
+    title: 'Django SaaS',
+    description: 'A SaaS application built with Django.',
+    stack: 'Django',
+  },
+  {
     href: 'https://referrals.wellington.codes',
-    title: 'Laravel Referral Platform',
+    title: 'Laravel Referrals App',
     description: 'A referral management platform for creating, tracking, and managing customer referrals.',
     stack: 'Laravel',
   },
   {
-    href: 'https://saas.wellington.codes',
-    title: 'SaaS Platform',
-    description: 'A subscription based SaaS application built with a Nuxt frontend and .NET backend.',
-    stack: 'Nuxt + .NET',
+    href: 'http://mobile-app.wellington.codes/',
+    title: 'Rebates and Points Mobile App',
+    description: 'A mobile app for managing customer rebates and loyalty points.',
+    stack: 'React Native',
   },
 ];
 
@@ -31,14 +47,9 @@ export default function SaaSPlatformsPage() {
         </p>
       </header>
       <div className="grid gap-4 md:grid-cols-2">
-        {platforms.map((platform) => (
-          <Link
-            key={platform.href}
-            href={platform.href}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-gray-400"
-          >
+        {platforms.map((platform) => {
+          const card = (
+            <>
             <div className="flex items-start justify-between gap-4">
               <h2 className="font-semibold text-gray-950">{platform.title}</h2>
               <span className="shrink-0 rounded-full bg-[#F5F2ED] px-3 py-1 text-xs font-medium text-gray-600">
@@ -46,8 +57,25 @@ export default function SaaSPlatformsPage() {
               </span>
             </div>
             <p className="mt-2 text-sm leading-6 text-gray-600">{platform.description}</p>
-          </Link>
-        ))}
+            </>
+          );
+
+          return platform.href ? (
+            <Link
+              key={platform.title}
+              href={platform.href}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-gray-200 bg-white p-6 transition-colors hover:border-gray-400"
+            >
+              {card}
+            </Link>
+          ) : (
+            <article key={platform.title} className="rounded-xl border border-gray-200 bg-white p-6">
+              {card}
+            </article>
+          );
+        })}
       </div>
     </div>
   );
