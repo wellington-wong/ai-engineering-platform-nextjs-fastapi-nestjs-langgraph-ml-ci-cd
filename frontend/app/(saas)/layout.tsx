@@ -33,7 +33,7 @@ async function AppLayoutContent({
 
     return (
         <SidebarProvider>
-            <ClerkProvider>
+            <ClerkProvider afterSignOutUrl="/dashboard">
 
                 <AppSidebar />
                 <SidebarInset>
