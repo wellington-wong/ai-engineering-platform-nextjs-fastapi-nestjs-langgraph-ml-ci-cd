@@ -1,15 +1,18 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+
 export const metadata: Metadata = {
   title: 'SaaS & Mobile',
 };
 
 const platforms = [
   {
+    href: 'https://www.wellington.codes/dashboard',
     title: 'Next.js SaaS with Clerk Auth',
     description: 'A SaaS application with authentication powered by Clerk.',
     stack: 'Next.js + Clerk',
+
   },
   {
     href: 'https://saas.wellington.codes',
@@ -18,6 +21,8 @@ const platforms = [
     stack: 'Nuxt + .NET',
   },
   {
+
+    href: 'https://saas.wellington.codes',
     title: 'Django SaaS',
     description: 'A SaaS application built with Django.',
     stack: 'Django',

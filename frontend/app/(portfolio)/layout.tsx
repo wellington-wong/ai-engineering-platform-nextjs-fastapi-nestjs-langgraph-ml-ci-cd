@@ -50,7 +50,7 @@ export default function AppsLayout({
       <Header saasMode={false} /><ClarityInit />
       <div className="flex flex-col min-h-[calc(100dvh-68px)] max-w-7xl mx-auto w-full">
 
-        <div className="lg:hidden flex items-center justify-between  bg-[#F1F3F5] border-b border-gray-200 p-4">
+        <div className="lg:hidden flex items-center justify-between  border-b border-gray-200 p-4">
 
 
 
@@ -69,7 +69,7 @@ export default function AppsLayout({
         <div className="flex flex-1 overflow-hidden h-full">
           {/* Sidebar */}
           <aside
-              className={`w-64 bg-[#F1F3F5] lg:bg-[#F1F3F5] border-r border-gray-200 lg:block ${
+              className={`w-64 border-r border-gray-200 lg:block ${
                   isSidebarOpen ? 'block' : 'hidden'
               } lg:relative absolute inset-y-0 left-0 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
                   isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
@@ -98,7 +98,7 @@ export default function AppsLayout({
                         }
                         className={`shadow-none my-1 w-full justify-start cursor-pointer ${
                           pathname === item.href || pathname.startsWith(`${item.href}/`)
-                          ? 'bg-[#F1F3F5] font-bold text-gray-950'
+                          ? ' font-bold text-gray-950'
                             : ''
                         } ${item.nested ? 'ml-4 w-[calc(100%-1rem)] text-sm' : ''}`}
                         onClick={() => setIsSidebarOpen(false)}
@@ -115,7 +115,7 @@ export default function AppsLayout({
           <main className="flex-1 overflow-y-auto p-0 pb-20 lg:p-4 lg:pb-20">{children}</main>
         </div>
       </div>
-      <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-[#F1F3F5]/95 backdrop-blur-sm">
+      <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 backdrop-blur-sm">
         <nav aria-label="Contact and social links" className="mx-auto flex max-w-7xl items-center justify-end gap-2 px-3 py-1 sm:gap-5 sm:px-6">
           <a href="https://www.linkedin.com/in/wellingtonwong/" target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn" className="inline-flex items-center gap-2 rounded-md px-2 py-2 text-sm text-gray-700 transition-colors hover:bg-white hover:text-gray-950">
             <img src="/images/svg/linkedin.svg" title="" className="h-5 w-5 opacity-25 hover:opacity-100" />

@@ -11,11 +11,12 @@ const videos = [
   },
 ];
 
+
 export default function VideoGalleryPage() {
   return (
     <div className="mx-auto max-w-5xl p-6 lg:p-8">
       <header className="mb-8">
-        <p className="mb-2 text-sm font-medium text-gray-500">Introduction and Showcase Demos</p>
+        <p className="mb-2 text-sm font-medium text-gray-500">Introduction and Project Demos</p>
         <h1 className="text-3xl font-semibold tracking-tight text-gray-950">Video Gallery</h1>
         <p className="mt-3 max-w-2xl text-gray-600">
           Walkthroughs and demos of selected projects.
