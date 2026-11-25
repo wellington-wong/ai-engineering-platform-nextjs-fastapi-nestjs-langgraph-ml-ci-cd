@@ -151,6 +151,7 @@ export function Header({ saasMode } : {saasMode: boolean}) {
 
   return (
       <header className="border-b border-gray-200">
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <Image src="/images/w.codes-logo.png" width="98" height="23" alt="Wellington Codes" />
